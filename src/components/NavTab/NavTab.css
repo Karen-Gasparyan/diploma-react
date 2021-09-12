@@ -1,0 +1,33 @@
+.navtab-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background: #000;
+  max-width: 100%;
+  min-height: 66px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navtab-item {
+  color: #fff;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 16px;
+  margin-right: 24px;
+}
+
+.navtab-item:last-child {
+  margin-right: 0;
+}
+
+@media (min-width: 768px) {
+  .navtab-item {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 1024px) {
+
+}

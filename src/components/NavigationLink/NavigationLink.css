@@ -1,6 +1,9 @@
 .navigation-link {
   text-decoration: none;
   color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
   cursor: pointer;
   transition: all .5s ease;
 }
