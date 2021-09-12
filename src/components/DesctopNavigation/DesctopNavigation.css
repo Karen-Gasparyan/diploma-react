@@ -1,0 +1,27 @@
+.desctop-navigation {
+  display: none;
+  align-items: center;
+  color: #fff;
+}
+
+.desctop-navigation__list {
+  display: flex;
+  list-style-type: none;
+  margin: 0 50px 0 0;
+  padding: 0;
+}
+
+.desctop-navigation__item {
+  color: #fff;
+  margin-right: 20px;
+}
+
+.desctop-navigation__item:last-child {
+  margin-right: 0;
+}
+
+@media (min-width: 1024px) {
+  .desctop-navigation {
+    display: flex;
+  }
+}

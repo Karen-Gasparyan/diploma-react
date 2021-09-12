@@ -1,0 +1,13 @@
+.navigation-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+
+@media (min-width: 1024px) {
+  .navigation-link:hover {
+    opacity: .8;
+    transition: all .5s ease;
+  }
+}

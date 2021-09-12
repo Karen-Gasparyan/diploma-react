@@ -1,0 +1,26 @@
+.account-link {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  transition: all .5s ease;
+  cursor: pointer;
+}
+
+.account-link__icon {
+  background: #F5F5F5 url('../../image/account-icon.svg') center / 11.5px 14px no-repeat;
+  border-radius: 4px;
+  margin-left: 17px;
+  width: 26px;
+  height: 30px;
+}
+
+@media (min-width: 1024px) {
+  .account-link:hover {
+    opacity: .8;
+    transition: all .5s ease;
+  }
+}

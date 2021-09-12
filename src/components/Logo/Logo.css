@@ -1,0 +1,13 @@
+.logo {
+  background: url('../../image/logo.svg') 0 0 / cover no-repeat;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  transition: all 1s ease;
+}
+
+.logo:hover {
+  opacity: .8;
+  transition: all 1s ease;
+}
