@@ -9,6 +9,7 @@
 .menu-burger__item {
   width: 28px;
   height: 3px;
+  border-radius: 3px;
   background: #fff;
   transition: all .5s ease;
 }
@@ -19,6 +20,7 @@
   position: absolute;
   width: 28px;
   height: 3px;
+  border-radius: 3px;
   background: #fff;
   transition: all .5s ease;
 }
