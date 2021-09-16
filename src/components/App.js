@@ -12,9 +12,9 @@ function App() {
   return (
     <div className="app">
       <Route>
-        {/* <Header loggedIn={loggedIn}/>
-        <Main/> */}
-        <NotFoundPage/>
+        {/* <Header loggedIn={loggedIn}/> */}
+        <Main/>
+        {/* <NotFoundPage/> */}
       </Route>
     </div>
     
