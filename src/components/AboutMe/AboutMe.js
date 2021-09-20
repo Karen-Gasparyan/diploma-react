@@ -11,6 +11,7 @@ import {
 
 import SectionTitle from '../SectionTitle/SectionTitle';
 import AboutMeSocialItem from '../AboutMeSocialItem/AboutMeSocialItem';
+import Portfolio from '../Portfolio/Portfolio';
 
 const AboutMe = () => {
   return (
@@ -34,6 +35,7 @@ const AboutMe = () => {
           </ul>
         </div>
       </div>
+      <Portfolio/>
     </section>
   );
 };

@@ -1,0 +1,30 @@
+.portfolio {
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio__title {
+  margin-top: 70px;
+  margin-bottom: 40px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #A0A0A0;
+}
+
+.portfolio__item-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 768 */
+
+@media (min-width: 768px) {
+  .portfolio__title {
+    margin-top: 0;
+    margin-bottom: 50px;
+    font-size: 18px;
+    line-height: 20px;
+  }
+}

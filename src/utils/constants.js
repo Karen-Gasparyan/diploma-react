@@ -27,6 +27,12 @@ const STUDENT_SOCIAL_NETWORKS = [
   { id: 1, title: 'Facebook', link: 'https://m.facebook.com/login/?locale2=ru_RU' },
   { id: 2, title: 'Github', link: 'https://github.com/Karen-Gasparyan' }
 ];
+// portfolio
+const PORTFOLIO_ITEMS = [
+  { id: 1, title: 'Статичный сайт', link: '' },
+  { id: 2, title: 'Адаптивный сайт', link: '' },
+  { id: 3, title: 'Одностраничное приложение', link: '' }
+];
 
 export {
   // navigations menu
@@ -47,5 +53,6 @@ export {
   STUDENT_ABOUT,
   STUDENT_BIOGRAPHY,
   STUDENT_SOCIAL_NETWORKS,
-
+  // portfolio
+  PORTFOLIO_ITEMS
 }
