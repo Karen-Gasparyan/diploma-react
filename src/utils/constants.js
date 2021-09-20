@@ -19,6 +19,14 @@ const TECHS_ITEM_DATA = [
   { id: 6, title: 'Express.js', link: 'https://developer.mozilla.org/ru/docs/Learn/Server-side/Express_Nodejs' },
   { id: 7, title: 'mongoDB', link: 'https://developer.mozilla.org/ru/docs/Learn/Server-side/Express_Nodejs/mongoose' }
 ];
+// about me
+const STUDENT_NAME = 'Виталий';
+const STUDENT_ABOUT = 'Фронтенд-разработчик, 30 лет';
+const STUDENT_BIOGRAPHY = 'Я родился и живу в Саратове, закончил факультет экономики СГУ. У меня есть жена и дочь. Я люблю слушать музыку, а ещё увлекаюсь бегом. Недавно начал кодить. С 2015 года работал в компании «СКБ Контур». После того, как прошёл курс по веб-разработке, начал заниматься фриланс-заказами и ушёл с постоянной работы.';
+const STUDENT_SOCIAL_NETWORKS = [
+  { id: 1, title: 'Facebook', link: 'https://m.facebook.com/login/?locale2=ru_RU' },
+  { id: 2, title: 'Github', link: 'https://github.com/Karen-Gasparyan' }
+];
 
 export {
   // navigations menu
@@ -33,5 +41,11 @@ export {
   PROMO_TECHNOLOGIES,
   PROMO_STUDENT,
   // techs
-  TECHS_ITEM_DATA
+  TECHS_ITEM_DATA,
+  // about me
+  STUDENT_NAME,
+  STUDENT_ABOUT,
+  STUDENT_BIOGRAPHY,
+  STUDENT_SOCIAL_NETWORKS,
+
 }

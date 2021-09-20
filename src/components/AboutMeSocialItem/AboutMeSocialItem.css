@@ -1,0 +1,17 @@
+.about-me-social-item__link {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000;
+  transition: all 1s ease;
+}
+
+/* 1024 */
+
+@media (min-width: 1024px) {
+  .about-me-social-item__link:hover {
+    opacity: .6;
+    transition: all 1s ease;
+  }
+}
