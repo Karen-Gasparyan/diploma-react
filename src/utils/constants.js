@@ -24,8 +24,9 @@ const STUDENT_NAME = 'Виталий';
 const STUDENT_ABOUT = 'Фронтенд-разработчик, 30 лет';
 const STUDENT_BIOGRAPHY = 'Я родился и живу в Саратове, закончил факультет экономики СГУ. У меня есть жена и дочь. Я люблю слушать музыку, а ещё увлекаюсь бегом. Недавно начал кодить. С 2015 года работал в компании «СКБ Контур». После того, как прошёл курс по веб-разработке, начал заниматься фриланс-заказами и ушёл с постоянной работы.';
 const STUDENT_SOCIAL_NETWORKS = [
-  { id: 1, title: 'Facebook', link: 'https://m.facebook.com/login/?locale2=ru_RU' },
-  { id: 2, title: 'Github', link: 'https://github.com/Karen-Gasparyan' }
+    { id: 1, title: 'Яндекс.Практикум', link: 'https://practicum.yandex.ru' },
+    { id: 2, title: 'Facebook', link: 'https://m.facebook.com/login/?locale2=ru_RU' },
+    { id: 3, title: 'Github', link: 'https://github.com/Karen-Gasparyan' }
 ];
 // portfolio
 const PORTFOLIO_ITEMS = [

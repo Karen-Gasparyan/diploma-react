@@ -22,15 +22,13 @@ const AboutMe = () => {
           className="about-me__photo"
           src={ STUDENT_PHOTO }
           alt="Фото студента" />
-
         <div className="about-me__texts">
           <h2 className="about-me__name">{ STUDENT_NAME }</h2>
           <p className="about-me__info">{ STUDENT_ABOUT }</p>
           <p className="about-me__biography">{ STUDENT_BIOGRAPHY }</p>
-
           <ul className="about-me__social-list">
             {
-              STUDENT_SOCIAL_NETWORKS.map(item => (<AboutMeSocialItem key={ item.id } item={ item }/>))
+              STUDENT_SOCIAL_NETWORKS.slice(1).map(item => (<AboutMeSocialItem key={ item.id } item={ item }/>))
             }
           </ul>
         </div>
