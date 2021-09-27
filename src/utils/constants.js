@@ -34,6 +34,18 @@ const PORTFOLIO_ITEMS = [
   { id: 2, title: 'Адаптивный сайт', link: '' },
   { id: 3, title: 'Одностраничное приложение', link: '' }
 ];
+// auth login
+const LOGIN_TITLE = 'Рады видеть!';
+const LOGIN_BUTTON_VALUE = 'Войти';
+// auth register
+const REGISTER_TITLE = 'Добро пожаловать!';
+const REGISTER_BUTTON_VALUE = 'Зарегистрироваться';
+// auth form's
+const AUTH_INPUT_DATA = [
+  { label: 'Имя', name: 'name', type: 'text', minLength: 2, maxLength: 30 },
+  { label: 'E-mail', name: 'email', type: 'email' },
+  { label: 'Пароль', name: 'password', type: 'password', minLength: 8 }
+];
 
 export {
   // navigations menu
@@ -55,5 +67,13 @@ export {
   STUDENT_BIOGRAPHY,
   STUDENT_SOCIAL_NETWORKS,
   // portfolio
-  PORTFOLIO_ITEMS
+  PORTFOLIO_ITEMS,
+  // auth login
+  LOGIN_TITLE,
+  LOGIN_BUTTON_VALUE,
+  // auth register
+  REGISTER_TITLE,
+  REGISTER_BUTTON_VALUE,
+  // auth form's
+  AUTH_INPUT_DATA
 }

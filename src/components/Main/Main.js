@@ -16,8 +16,8 @@ const Main = () => {
       {/* <NavTab title={[PROMO_ABOUT, PROMO_TECHNOLOGIES, PROMO_STUDENT]}/> */}
       {/* <AboutProject/> */}
       {/* <Techs/> */}
-      <AboutMe/>
-      <Footer/>
+      {/* <AboutMe/> */}
+      {/* <Footer/> */}
     </>
   );
 };
