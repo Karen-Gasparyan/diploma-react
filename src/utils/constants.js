@@ -46,6 +46,19 @@ const AUTH_INPUT_DATA = [
   { label: 'E-mail', name: 'email', type: 'email' },
   { label: 'Пароль', name: 'password', type: 'password', minLength: 8 }
 ];
+// edit popup
+const EDIT_POPUP = {
+  EDIT_USER_PROFILE: {
+    formName: 'edit-user-profile',
+    submitButtonValue: 'Сохранить',
+    labelValue: { name: 'Имя', email: 'E-mail' },
+    htmlFor: { name: 'name', email: 'email' },
+    inputTypeValue: { text: 'text', email: 'email' },
+    clearButtonName: { name: 'name', email: 'email' },
+    minLength: { name: 2, email: 5 },
+    maxLength: { name: 30, email: 30 }
+  }
+}
 
 export {
   // navigations menu
@@ -75,5 +88,7 @@ export {
   REGISTER_TITLE,
   REGISTER_BUTTON_VALUE,
   // auth form's
-  AUTH_INPUT_DATA
+  AUTH_INPUT_DATA,
+  // edit popup
+  EDIT_POPUP
 }
