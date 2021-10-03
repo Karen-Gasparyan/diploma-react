@@ -1,3 +1,5 @@
+// RegExp
+const EMAIL_RegExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 // navigations menu
 const HOME_PAGE = 'Главная';
 const MOVIES_PAGE = 'Фильмы';
@@ -56,11 +58,19 @@ const EDIT_POPUP = {
     inputTypeValue: { text: 'text', email: 'email' },
     clearButtonName: { name: 'name', email: 'email' },
     minLength: { name: 2, email: 5 },
-    maxLength: { name: 30, email: 30 }
+    maxLength: { name: 30, email: 100 }
   }
-}
+};
+// edit profile data validation
+const EDIT_PROFILE_DATA_VALIDATION = {
+  name: { minLength: 'имя должно содержать не менее 2 символов' },
+  email: { incorrectEmail: 'некорректный E-mail' },
+  default: 'поле не может быть пустым'
+};
 
 export {
+  // RegExp
+  EMAIL_RegExp,
   // navigations menu
   HOME_PAGE,
   MOVIES_PAGE,
@@ -90,5 +100,7 @@ export {
   // auth form's
   AUTH_INPUT_DATA,
   // edit popup
-  EDIT_POPUP
+  EDIT_POPUP,
+  // edit profile data validation
+  EDIT_PROFILE_DATA_VALIDATION
 }

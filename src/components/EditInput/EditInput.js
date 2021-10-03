@@ -11,6 +11,7 @@ const EditInput = (
     clearButton,
     clearInput,
     inputValue,
+    inputErrorMessage,
     onChange
   }) => {
   return (
@@ -38,6 +39,7 @@ const EditInput = (
           onClick={ clearInput }>
         </button>
       </div>
+      <span className="edit-input__error-message">{ inputErrorMessage }</span>
     </>
   );
 };

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Switch, Route, useHistory } from 'react-router-dom';
 
 import './App.css';
-import { EDIT_POPUP } from '../utils/constants';
+import { EMAIL_RegExp, EDIT_POPUP, EDIT_PROFILE_DATA_VALIDATION } from '../utils/constants';
 // component's
 import NotFoundPage from './NotFoundPage/NotFoundPage';
 import EditPopup from './EditPopup/EditPopup';
@@ -28,7 +28,10 @@ function App() {
   // user data
   const [userData, setUserData] = useState({ name: '', email: '' });
   // current user data
-  const [currentUser, setCurrentUser] = useState({ name: 'Карен', email: 'gks181188@mail.ru' })
+  const [currentUser, setCurrentUser] = useState({ name: 'Карен', email: 'gks181188@mail.ru' });
+  // validation
+  const [editProfileSubmitButtonDisabled, setEditProfileSubmitButtonDisabled] = useState(true);
+  const [editProfileInputErrorMessage, setEditProfileInputErrorMessage] = useState({ name: '', email: '' });
 
   /* handlers */
   const handleSubmitRegister = (e) => {
@@ -67,15 +70,58 @@ function App() {
       setPopupVisible(false);
     } else {
       setPopupVisible(true);
+      setEditProfileSubmitButtonDisabled(true);
+      setEditProfileInputErrorMessage({ name: '', email: '' });
       setUserData({ name: currentUser.name, email: currentUser.email });
     }
   }
 
+  // edit profile data validation
   const handleCurrentUserProfileEdit = (e) => {
     if(e.target.name === 'name') {
-      setUserData({ name: e.target.value, email: userData.email })
-    } else if(e.target.name === 'email') {
-      setUserData({ name: userData.name, email: e.target.value})
+      setUserData({ name: e.target.value, email: userData.email });
+      if(e.target.value.length === 0) {
+        setEditProfileInputErrorMessage({
+          name: EDIT_PROFILE_DATA_VALIDATION.default,
+          email: editProfileInputErrorMessage.email
+        });
+        setEditProfileSubmitButtonDisabled(true);
+      } else if(e.target.value.length < 2) {
+        setEditProfileInputErrorMessage({
+          name: EDIT_PROFILE_DATA_VALIDATION.name.minLength,
+          email: editProfileInputErrorMessage.email
+        });
+        setEditProfileSubmitButtonDisabled(true);
+      } else if(e.target.value.length >= 2) {
+        setEditProfileInputErrorMessage({
+          name: '',
+          email: editProfileInputErrorMessage.email
+        });
+        setEditProfileSubmitButtonDisabled(false);
+      };
+    };
+    
+    if(e.target.name === 'email') {
+      setUserData({ name: userData.name, email: e.target.value});
+      if(e.target.value.length === 0) {
+        setEditProfileInputErrorMessage({
+          name: editProfileInputErrorMessage.name,
+          email: EDIT_PROFILE_DATA_VALIDATION.default
+        });
+        setEditProfileSubmitButtonDisabled(true);
+      } else if(!EMAIL_RegExp.test(String(e.target.value).toLowerCase())) {
+        setEditProfileInputErrorMessage({
+          name: editProfileInputErrorMessage.name,
+          email: EDIT_PROFILE_DATA_VALIDATION.email.incorrectEmail
+        });
+        setEditProfileSubmitButtonDisabled(true);
+      } else {
+        setEditProfileInputErrorMessage({
+          name: editProfileInputErrorMessage.name,
+          email: ''
+        });
+        setEditProfileSubmitButtonDisabled(false);
+      }
     };
   };
   /* /handlers */
@@ -83,10 +129,14 @@ function App() {
   // helpers
   const clearUserProfileDataInput = (e) => {
     if(e.target.name === 'name') {
-      setUserData({ name: '', email: userData.email })
+      setUserData({ name: '', email: userData.email });
+      setEditProfileInputErrorMessage({ name: 'поле не может быть пустым', email: editProfileInputErrorMessage.email });
     } else if(e.target.name === 'email') {
-      setUserData({ name: userData.name, email: ''})
+      setUserData({ name: userData.name, email: ''});
+      setEditProfileInputErrorMessage({ name: editProfileInputErrorMessage.name, email: 'поле не может быть пустым' });
     };
+
+    setEditProfileSubmitButtonDisabled(true);
   }
 
   return (
@@ -129,10 +179,12 @@ function App() {
           onSubmit={ handleSubmitEditProfile }
           settings={ EDIT_POPUP.EDIT_USER_PROFILE }
           inputValue={ userData }
+          inputErrorMessage={ editProfileInputErrorMessage }
           onChange={ handleCurrentUserProfileEdit }
           clearInput={ clearUserProfileDataInput }
           popupVisible={ popupVisible }
-          popupHidden={ handleUserProfileEdit }/>
+          popupHidden={ handleUserProfileEdit }
+          submitButtonDisabled={ editProfileSubmitButtonDisabled }/>
 
       </CurrentUserContext.Provider>
     </div>

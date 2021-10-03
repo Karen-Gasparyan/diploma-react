@@ -1,5 +1,5 @@
 .edit-input__label {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-weight: normal;
   font-size: 10px;
   line-height: 12px;
@@ -9,20 +9,16 @@
 
 .edit-input__wrapper {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-.edit-input__wrapper:last-of-type {
-  margin-bottom: 50px;
-}
-
 .edit-input {
   border: none;
-  padding: 15px;
+  padding: 15px 40px 15px 15px;
   box-sizing: border-box;
   background-color: #F9F9F9;
   color: #000;
@@ -48,5 +44,24 @@
   margin-right: 15px;
   background: url(../../image/close-button.svg) center / cover no-repeat;
   opacity: .2;
+  transition: all .5s ease;
   cursor: pointer;
+}
+
+.edit-input__clear-button:hover {
+  opacity: .4;
+  transition: all .5s ease;
+}
+
+.edit-input__error-message {
+  margin-bottom: 10px;
+  min-height: 10px;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 10px;
+  color: #FF3055;
+}
+
+.edit-input__error-message:last-of-type {
+  margin-bottom: 30px;
 }

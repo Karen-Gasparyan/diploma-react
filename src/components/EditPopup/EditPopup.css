@@ -30,7 +30,7 @@
   background-color: #fff;
   position: relative;
   width: 100%;
-  max-width: 480px;
+  max-width: 380px;
   box-sizing: border-box;
   border-radius: 8px;
   padding: 30px 15px 15px;
@@ -49,6 +49,16 @@
   color: #fff;
   cursor: pointer;
   transition: all .5s ease;
+}
+
+.edit-popup__submit-button.disabled {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.3);
+  cursor: default;
+}
+
+.edit-popup__submit-button.disabled:hover {
+  opacity: 1;
 }
 
 .edit-popup__close-button {
@@ -77,11 +87,6 @@
   .edit-popup {
     padding-left: 0;
     padding-right: 0;
-  }
-
-  .edit-popup__content {
-    padding-left: 30px;
-    padding-right: 30px;
   }
 
   .edit-popup__close-button {

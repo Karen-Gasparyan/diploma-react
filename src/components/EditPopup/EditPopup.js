@@ -16,10 +16,12 @@ const EditPopup = (
       maxLength },
     
     inputValue,
+    inputErrorMessage,
     onChange,
     clearInput,
     popupVisible,
-    popupHidden
+    popupHidden,
+    submitButtonDisabled
   }) => {
   return (
     <div className={popupVisible ? "edit-popup edit-popup-opened" : "edit-popup"}>
@@ -37,6 +39,7 @@ const EditPopup = (
             clearButton={ clearButtonName.name }
             clearInput={ clearInput }
             inputValue={ inputValue.name }
+            inputErrorMessage={ inputErrorMessage.name }
             onChange={ onChange }/>
           <Component
             labelValue={ labelValue.email }
@@ -47,10 +50,12 @@ const EditPopup = (
             clearButton={ clearButtonName.email }
             clearInput={ clearInput }
             inputValue={ inputValue.email }
+            inputErrorMessage={ inputErrorMessage.email }
             onChange={ onChange }/>
           <button
-            className="edit-popup__submit-button"
-            type="submit">
+            className={submitButtonDisabled ? 'edit-popup__submit-button disabled' : 'edit-popup__submit-button'}
+            type="submit"
+            disabled={ submitButtonDisabled }>
               { submitButtonValue }
           </button>
         </form>
