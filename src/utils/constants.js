@@ -67,6 +67,9 @@ const EDIT_PROFILE_DATA_VALIDATION = {
   email: { incorrectEmail: 'некорректный E-mail' },
   default: 'поле не может быть пустым'
 };
+// search movies
+const SEARCH_PLACEHOLDER = 'Фильм';
+const FILTERCHECKBOX_VALUE = 'Короткометражки';
 
 export {
   // RegExp
@@ -102,5 +105,8 @@ export {
   // edit popup
   EDIT_POPUP,
   // edit profile data validation
-  EDIT_PROFILE_DATA_VALIDATION
+  EDIT_PROFILE_DATA_VALIDATION,
+  // search movies
+  SEARCH_PLACEHOLDER,
+  FILTERCHECKBOX_VALUE
 }

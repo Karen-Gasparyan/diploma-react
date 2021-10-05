@@ -6,13 +6,16 @@ import NavigationAuth from "../NavigationAuth/NavigationAuth";
 import MenuBurger from "../MenuBurger/MenuBurger";
 import Navigation from "../Navigation/Navigation";
 import DesctopNavigation from '../DesctopNavigation/DesctopNavigation';
+import LoggedInContext from '../../contexts/LoggedInContext';
 
-const Header = ({ loggedIn }) => {
+const Header = () => {
   const [menuBurgerOpened, setMenuBurgerOpened] = useState(false);
+
+  const loggedIn = React.useContext(LoggedInContext)
 
   const openMenuBurger = () => {
     setMenuBurgerOpened(!menuBurgerOpened)
-  }
+  };
 
   return (
     <div>

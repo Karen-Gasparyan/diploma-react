@@ -40,7 +40,8 @@ const EditPopup = (
             clearInput={ clearInput }
             inputValue={ inputValue.name }
             inputErrorMessage={ inputErrorMessage.name }
-            onChange={ onChange }/>
+            onChange={ onChange }
+            autoFocus={ true }/>
           <Component
             labelValue={ labelValue.email }
             htmlFor={ htmlFor.email }

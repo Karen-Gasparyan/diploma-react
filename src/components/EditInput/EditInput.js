@@ -12,7 +12,8 @@ const EditInput = (
     clearInput,
     inputValue,
     inputErrorMessage,
-    onChange
+    onChange,
+    autoFocus
   }) => {
   return (
     <>
@@ -31,9 +32,12 @@ const EditInput = (
           maxLength={ maxLength }
           value={ inputValue }
           onChange={ onChange }
+          autoFocus={ autoFocus }
           required />
         <button
-          className="edit-input__clear-button"
+          className={ inputValue.length === 0 ?
+                      "edit-input__clear-button-disabled" :
+                      "edit-input__clear-button" }
           type="button"
           name={ clearButton }
           onClick={ clearInput }>

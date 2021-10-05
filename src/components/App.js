@@ -13,7 +13,9 @@ import Main from './Main/Main';
 import Register from './Register/Register';
 import Login from './Login/Login';
 import Profile from './Profile/Profile';
+import Movies from './Movies/Movies';
 // context's
+import LoggedInContext from '../contexts/LoggedInContext';
 import AuthValueContext from '../contexts/AuthValueContext';
 import CurrentUserContext from '../contexts/CurrentUserContext';
 
@@ -142,18 +144,22 @@ function App() {
   return (
     <div className="app">
       <CurrentUserContext.Provider value={ currentUser }>
+      <LoggedInContext.Provider value={ loggedIn }>
         <Switch>
-          <Route exact path='/'>
-            {/* <Header /> */}
-            {/* <Main/> */}
-            {/* <NotFoundPage/> */}
+          {/* <Route exact path='/'>
+            <Header/>
+            <Main/>
+            <NotFoundPage/>
+          </Route> */}
+
+          <Route  path='/movies'>
+            <Movies/>
           </Route>
 
-          <Route path='/profile'>
+          {/* <Route path='/profile'>
             <Profile
-              handleUserProfileEdit={ handleUserProfileEdit }
-              loggedIn={loggedIn}/>
-          </Route>
+              handleUserProfileEdit={ handleUserProfileEdit }/>
+          </Route> */}
 
           {/* <AuthValueContext.Provider
             value={
@@ -174,18 +180,23 @@ function App() {
           </AuthValueContext.Provider> */}
         </Switch>
 
-        <EditPopup
-          component={ EditInput }
-          onSubmit={ handleSubmitEditProfile }
-          settings={ EDIT_POPUP.EDIT_USER_PROFILE }
-          inputValue={ userData }
-          inputErrorMessage={ editProfileInputErrorMessage }
-          onChange={ handleCurrentUserProfileEdit }
-          clearInput={ clearUserProfileDataInput }
-          popupVisible={ popupVisible }
-          popupHidden={ handleUserProfileEdit }
-          submitButtonDisabled={ editProfileSubmitButtonDisabled }/>
+        {
+          popupVisible ? 
+            <EditPopup
+            component={ EditInput }
+            onSubmit={ handleSubmitEditProfile }
+            settings={ EDIT_POPUP.EDIT_USER_PROFILE }
+            inputValue={ userData }
+            inputErrorMessage={ editProfileInputErrorMessage }
+            onChange={ handleCurrentUserProfileEdit }
+            clearInput={ clearUserProfileDataInput }
+            popupVisible={ popupVisible }
+            popupHidden={ handleUserProfileEdit }
+            submitButtonDisabled={ editProfileSubmitButtonDisabled }/>
+            : null
+        }
 
+      </LoggedInContext.Provider>
       </CurrentUserContext.Provider>
     </div>
   );

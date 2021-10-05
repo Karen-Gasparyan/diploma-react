@@ -5,12 +5,12 @@ import './Profile.css';
 import CurrentUserContext from '../../contexts/CurrentUserContext';
 import Header from '../Header/Header';
 
-const Profile = ({ handleUserProfileEdit, loggedIn }) => {
+const Profile = ({ handleUserProfileEdit }) => {
   const { name, email } = React.useContext(CurrentUserContext);
 
   return (
     <>
-      <Header loggedIn={ loggedIn }/>
+      <Header/>
       <section className="profile">
         <div className="profile__content">
           <h2 className="profile__title">Привет, { name }</h2>

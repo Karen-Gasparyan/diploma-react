@@ -1,0 +1,22 @@
+.movies {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* 768 */
+
+@media (min-width: 768px) {
+  .movies {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+/* 1280 */
+
+@media (min-width: 1280px) {
+  .movies {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}
