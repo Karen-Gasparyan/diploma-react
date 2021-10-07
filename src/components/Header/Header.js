@@ -14,7 +14,7 @@ const Header = () => {
   const loggedIn = React.useContext(LoggedInContext)
 
   const openMenuBurger = () => {
-    setMenuBurgerOpened(!menuBurgerOpened)
+    setMenuBurgerOpened(!menuBurgerOpened);
   };
 
   return (
@@ -33,7 +33,6 @@ const Header = () => {
         }
       </header>
     </div>
-    
   );
 };
 

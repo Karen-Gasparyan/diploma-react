@@ -1,5 +1,7 @@
 // RegExp
 const EMAIL_RegExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+// api
+const MOVIES_API = 'https://api.nomoreparties.co/beatfilm-movies';
 // navigations menu
 const HOME_PAGE = 'Главная';
 const MOVIES_PAGE = 'Фильмы';
@@ -74,6 +76,8 @@ const FILTERCHECKBOX_VALUE = 'Короткометражки';
 export {
   // RegExp
   EMAIL_RegExp,
+  // api
+  MOVIES_API,
   // navigations menu
   HOME_PAGE,
   MOVIES_PAGE,
@@ -109,4 +113,4 @@ export {
   // search movies
   SEARCH_PLACEHOLDER,
   FILTERCHECKBOX_VALUE
-}
+};

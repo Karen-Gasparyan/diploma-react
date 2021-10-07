@@ -8,10 +8,10 @@ const SearchForm = () => {
   return (
     <section className="search-form">
       <form className="search-form__form">
-        <div className="search-form__input-container">
-          <input
-            className="search-form__input"
-            placeholder={ SEARCH_PLACEHOLDER }/>
+        <input
+          className="search-form__input"
+          placeholder={ SEARCH_PLACEHOLDER }/>
+        <div className="search-form__buttons-container">
           <button
             className="search-form__clear-button"
             type="button">

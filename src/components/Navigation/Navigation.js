@@ -7,17 +7,17 @@ import NavigationLink from "../NavigationLink/NavigationLink";
 
 const Navigation = ({ menuBurgerOpened }) => {
   return (
-    <nav className={`navigation ${menuBurgerOpened ? "navigation-visible" : ''}`}>
+    <nav className={`navigation ${ menuBurgerOpened ? "navigation-visible" : '' }`}>
       <div className="navigation__content">
         <ul className="navigation__items">
           <li className="navigation__item">
-            <NavigationLink title={HOME_PAGE}/>
+            <NavigationLink title={ HOME_PAGE }/>
           </li>
           <li className="navigation__item">
-            <NavigationLink title={MOVIES_PAGE}/>
+            <NavigationLink title={ MOVIES_PAGE }/>
           </li>
           <li className="navigation__item">
-            <NavigationLink title={FAVORITE_MOVIES_PAGE}/>
+            <NavigationLink title={ FAVORITE_MOVIES_PAGE }/>
           </li>
         </ul>
         <AccountLink title={ACCOUNT_PAGE}/>

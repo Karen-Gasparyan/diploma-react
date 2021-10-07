@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Switch, Route, useHistory } from 'react-router-dom';
 
 import './App.css';
 import { EMAIL_RegExp, EDIT_POPUP, EDIT_PROFILE_DATA_VALIDATION } from '../utils/constants';
+// api
+import MoviesApi from '../utils/MoviesApi';
 // component's
 import NotFoundPage from './NotFoundPage/NotFoundPage';
 import EditPopup from './EditPopup/EditPopup';
@@ -18,9 +20,13 @@ import Movies from './Movies/Movies';
 import LoggedInContext from '../contexts/LoggedInContext';
 import AuthValueContext from '../contexts/AuthValueContext';
 import CurrentUserContext from '../contexts/CurrentUserContext';
+import AllMoviesContext from '../contexts/AllMoviesContext';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(true);
+  // api
+  const [allMovies, setAllMovies] = useState([]);
+  const [favoriteMovies, setFavoriteMovies] = useState([]);
   // auth form
   const [authName, setAuthName] = useState('');
   const [authEmail, setAuthEmail] = useState('');
@@ -34,6 +40,16 @@ function App() {
   // validation
   const [editProfileSubmitButtonDisabled, setEditProfileSubmitButtonDisabled] = useState(true);
   const [editProfileInputErrorMessage, setEditProfileInputErrorMessage] = useState({ name: '', email: '' });
+
+  // get all movies
+  useEffect(() => {
+    MoviesApi().then(res => setAllMovies(res));
+  }, []);
+
+  // get favorite movies
+  useEffect(() => {
+    
+  }, [])
 
   /* handlers */
   const handleSubmitRegister = (e) => {
@@ -145,12 +161,13 @@ function App() {
     <div className="app">
       <CurrentUserContext.Provider value={ currentUser }>
       <LoggedInContext.Provider value={ loggedIn }>
+      <AllMoviesContext.Provider value={ allMovies }>
         <Switch>
-          {/* <Route exact path='/'>
-            <Header/>
-            <Main/>
-            <NotFoundPage/>
-          </Route> */}
+          <Route exact path='/'>
+            {/* <Header/> */}
+            {/* <Main/> */}
+            {/* <NotFoundPage/> */}
+          </Route>
 
           <Route  path='/movies'>
             <Movies/>
@@ -196,6 +213,7 @@ function App() {
             : null
         }
 
+      </AllMoviesContext.Provider>
       </LoggedInContext.Provider>
       </CurrentUserContext.Provider>
     </div>
