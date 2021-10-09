@@ -1,19 +1,36 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  overflow: auto;
+
+  -webkit-box-shadow: 0px 5px 8px -5px rgba(34, 60, 80, 0.3);
+  -moz-box-shadow: 0px 5px 8px -5px rgba(34, 60, 80, 0.3);
+  box-shadow: 0px 5px 8px -5px rgba(34, 60, 80, 0.3);
+}
+
+._navigation-opened {
+  height: 100%;
+}
+
+.header__container {
   position: relative;
   display: flex;
   justify-content: space-between;
   padding: 18px 14px;
-  background: #073042;
+  background: #fff;
 }
 
 @media (min-width: 768px) {
-  .header {
+  .header__container {
     padding: 18px 30px;
   }
 }
 
 @media (min-width: 1280px) {
-  .header {
+  .header__container {
     padding: 18px 70px;
   }
 }

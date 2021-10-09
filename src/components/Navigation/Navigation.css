@@ -6,15 +6,14 @@
   right: 0;
   width: 100%;
   z-index: 1;
-  transform: translateX(-100%);
-  transition: all .5s ease;
-  opacity: 0;
+  transform: translateY(-100%);
+  visibility: hidden;
 }
 
 .navigation-visible {
-  transform: translateX(0);
-  transition: all .5s ease;
-  opacity: 1;
+  transform: translateY(0);
+  transition: all 1s ease;
+  visibility: visible;
 }
 
 .navigation__content {
@@ -28,6 +27,7 @@
   align-items: center;
   background: #fff;
   color: #000;
+  
 }
 
 .navigation__items {

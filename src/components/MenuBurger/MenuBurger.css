@@ -10,7 +10,7 @@
   width: 28px;
   height: 3px;
   border-radius: 3px;
-  background: #fff;
+  background: #000;
   transition: all .5s ease;
 }
 
@@ -21,7 +21,7 @@
   width: 28px;
   height: 3px;
   border-radius: 3px;
-  background: #fff;
+  background: #000;
   transition: all .5s ease;
 }
 

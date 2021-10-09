@@ -21,6 +21,8 @@ import LoggedInContext from '../contexts/LoggedInContext';
 import AuthValueContext from '../contexts/AuthValueContext';
 import CurrentUserContext from '../contexts/CurrentUserContext';
 import AllMoviesContext from '../contexts/AllMoviesContext';
+import FoundMoviesContext from '../contexts/FoundMoviesContext';
+import MenuBurgerNavigationContext from '../contexts/MenuBurgerNavigationContext';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(true);
@@ -31,8 +33,12 @@ function App() {
   const [authName, setAuthName] = useState('');
   const [authEmail, setAuthEmail] = useState('');
   const [authPassword, setAuthPassword] = useState('');
+  // search form
+  const [foundMovies, setFoundMovies] = useState([]);
   // popup's
   const [popupVisible, setPopupVisible] = useState(false);
+  // menu burger
+  const [menuBurgerOpened, setMenuBurgerOpened] = useState(false);
   // user data
   const [userData, setUserData] = useState({ name: '', email: '' });
   // current user data
@@ -49,18 +55,18 @@ function App() {
   // get favorite movies
   useEffect(() => {
     
-  }, [])
+  }, []);
 
   /* handlers */
   const handleSubmitRegister = (e) => {
     e.preventDefault();
     console.log('register form')
-  }
+  };
 
   const handleSubmitLogin = (e) => {
     e.preventDefault();
     console.log('login form')
-  }
+  };
 
   const handleSubmitEditProfile = (e) => {
     e.preventDefault();
@@ -68,19 +74,28 @@ function App() {
     setCurrentUser({ name: userData.name, email: userData.email });
     handleUserProfileEdit();
     console.log('edit profile form submited')
-  }
+  };
 
   const handleAuthName = (e) => {
     setAuthName(e.target.value);
-  }
+  };
 
   const handleAuthEmail = (e) => {
     setAuthEmail(e.target.value);
-  }
+  };
 
   const handleAuthPassword = (e) => {
     setAuthPassword(e.target.value);
-  }
+  };
+
+  const handleFoundMovies = (e) => {
+    setFoundMovies(e.target.value);
+    console.log(e.target.value)
+  };
+
+  const handleOpenMenuBurger = () => {
+    setMenuBurgerOpened(!menuBurgerOpened);
+  };
 
   // close & open popup
   const handleUserProfileEdit = () => {
@@ -91,8 +106,8 @@ function App() {
       setEditProfileSubmitButtonDisabled(true);
       setEditProfileInputErrorMessage({ name: '', email: '' });
       setUserData({ name: currentUser.name, email: currentUser.email });
-    }
-  }
+    };
+  };
 
   // edit profile data validation
   const handleCurrentUserProfileEdit = (e) => {
@@ -139,7 +154,7 @@ function App() {
           email: ''
         });
         setEditProfileSubmitButtonDisabled(false);
-      }
+      };
     };
   };
   /* /handlers */
@@ -155,13 +170,16 @@ function App() {
     };
 
     setEditProfileSubmitButtonDisabled(true);
-  }
+  };
 
   return (
     <div className="app">
       <CurrentUserContext.Provider value={ currentUser }>
       <LoggedInContext.Provider value={ loggedIn }>
       <AllMoviesContext.Provider value={ allMovies }>
+      <FoundMoviesContext.Provider value={ { foundMovies, handleFoundMovies } }>
+      <MenuBurgerNavigationContext.Provider value={ { menuBurgerOpened, handleOpenMenuBurger } }>
+
         <Switch>
           <Route exact path='/'>
             {/* <Header/> */}
@@ -213,6 +231,8 @@ function App() {
             : null
         }
 
+      </MenuBurgerNavigationContext.Provider>
+      </FoundMoviesContext.Provider>
       </AllMoviesContext.Provider>
       </LoggedInContext.Provider>
       </CurrentUserContext.Provider>
