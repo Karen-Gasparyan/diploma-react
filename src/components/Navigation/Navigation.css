@@ -1,19 +1,24 @@
 .navigation {
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: flex-end;
   top: 0;
   right: 0;
   width: 100%;
-  z-index: 1;
+  height: 100%;
   transform: translateY(-100%);
   visibility: hidden;
+  opacity: 0;
+  transition: all .7s ease;
+  overflow: auto;
+  z-index: 98;
 }
 
 .navigation-visible {
   transform: translateY(0);
-  transition: all 1s ease;
   visibility: visible;
+  opacity: 1;
+  transition: all .7s ease;
 }
 
 .navigation__content {

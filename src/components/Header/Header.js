@@ -15,7 +15,8 @@ const Header = () => {
   const { menuBurgerOpened, handleOpenMenuBurger } = React.useContext(MenuBurgerNavigationContext);
 
   return (
-    <header className={ menuBurgerOpened ? 'header _navigation-opened' : 'header'}>
+    <>
+    <header className="header">
       <div className="header__container">
         <Logo/>
         {
@@ -24,12 +25,14 @@ const Header = () => {
                         openMenuBurger={ handleOpenMenuBurger }/>
                       : <NavigationAuth/>
         }
-        <Navigation menuBurgerOpened={ menuBurgerOpened }/>
         {
           loggedIn ? <DesctopNavigation/> : ''
         }
       </div>
     </header>
+
+    <Navigation menuBurgerOpened={ menuBurgerOpened }/>
+    </>
   );
 };
 
