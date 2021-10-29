@@ -1,17 +1,9 @@
 .movies-card {
   display: flex;
   flex-direction: column;
-  width: 100%;
   background: #FDFDFD;
   box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
   transition: all .5s ease;
-}
-
-.movies-card:hover {
-  transition: all .5s ease;
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.3);
-  -moz-box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.3);
-  box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.3);
 }
 
 .movies-card__header {
@@ -24,6 +16,7 @@
 .movies-card__title-wrapper {
   display: flex;
   flex-direction: column;
+  max-width: 85%;
 }
 
 .movies-card__title {
@@ -53,11 +46,6 @@
   padding: 0;
   width: 30px;
   height: 30px;
-}
-
-.movies-card__favorite-button:hover {
-  background: url(../../image/favorite-icon-active.svg) center / contain no-repeat;
-  transition: all .1s ease;
 }
 
 .movies-card__favorite-button-active {
@@ -96,20 +84,57 @@
   align-items: center;
 }
 
-.movies-card__play-icon:hover {
-  background-color: rgba(0, 0, 0, 0.2);
-  transition: all .5s ease;
-  opacity: 1;
-}
-
 /* 768 */
 
 @media (min-width: 768px) {
+  .movies-card__title-wrapper {
+    max-width: 270px;
+  }
+  
+  .movies-card__title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
 
+/* 1024 */
+
+@media (min-width: 1024px) {
+  .movies-card__title-wrapper {
+    max-width: 400px;
+  }
 }
 
 /* 1280 */
 
 @media (min-width: 1280px) {
-  
+  .movies-card:hover {
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.3);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.3);
+    box-shadow: 0px 0px 10px 0px rgba(34, 60, 80, 0.3);
+  }
+
+  .movies-card__title-wrapper {
+    max-width: 290px;
+  }
+
+  .movies-card__favorite-button:hover {
+    background: url(../../image/favorite-icon-active.svg) center / contain no-repeat;
+    transition: all .1s ease;
+  }
+
+  .movies-card__play-icon:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: all .5s ease;
+    opacity: 1;
+  }
+}
+
+/* 1366 */
+
+@media (min-width: 1366px) {
+  .movies-card__title-wrapper {
+    max-width: 320px;
+  }
 }

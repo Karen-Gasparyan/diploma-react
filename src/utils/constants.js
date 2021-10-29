@@ -2,6 +2,17 @@
 const EMAIL_RegExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 // api
 const MOVIES_API = 'https://api.nomoreparties.co/beatfilm-movies';
+// initial
+const MOBILE_SCREEN_SIZE = 320;
+const TABLET_SCREEN_SIZE = 768;
+const DESKTOP_SCREEN_SIZE = 1280;
+const MOBILE_INITIAL_MOVIES = 5;
+const TABLET_INITIAL_MOVIES = 8;
+const DESKTOP_INITIAL_MOVIES = 12;
+const LOAD_MORE_ON_MOBILE = 4;
+const LOAD_MORE_ON_TABLET = 6;
+const LOAD_MORE_ON_DESKTOP = 9;
+const LOAD_MORE_BUTTON_TITLE = 'Ещё';
 // navigations menu
 const HOME_PAGE = 'Главная';
 const MOVIES_PAGE = 'Фильмы';
@@ -78,6 +89,17 @@ export {
   EMAIL_RegExp,
   // api
   MOVIES_API,
+  // initial
+  MOBILE_SCREEN_SIZE,
+  TABLET_SCREEN_SIZE,
+  DESKTOP_SCREEN_SIZE,
+  MOBILE_INITIAL_MOVIES,
+  TABLET_INITIAL_MOVIES,
+  DESKTOP_INITIAL_MOVIES,
+  LOAD_MORE_ON_MOBILE,
+  LOAD_MORE_ON_TABLET,
+  LOAD_MORE_ON_DESKTOP,
+  LOAD_MORE_BUTTON_TITLE,
   // navigations menu
   HOME_PAGE,
   MOVIES_PAGE,

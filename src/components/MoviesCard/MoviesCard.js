@@ -2,13 +2,13 @@ import React from 'react';
 
 import './MoviesCard.css';
 
-const MoviesCard = ({ nameRU, duration, trailerLink, image: { url } }) => {
+const MoviesCard = ({ nameRU, duration, trailerLink, image: { url }, getTimeFromMins }) => {
   return (
     <article className="movies-card">
       <header className="movies-card__header">
         <div className="movies-card__title-wrapper">
           <h2 className="movies-card__title">{ nameRU }</h2>
-          <p className="movies-card__subtitle">{ duration }</p>
+          <p className="movies-card__subtitle">{ getTimeFromMins(duration) }</p>
         </div>
         <button className="movies-card__favorite-button"></button>
       </header>
